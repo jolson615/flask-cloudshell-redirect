@@ -2,11 +2,12 @@
 {% block title %}Index{% endblock title%}
 
 {% block content %}
-
+<h1>Attempts at using redirect with a Cloudshell .dev preview </h1>
+<p>Routes in <span class="text-danger">red</span> do not work in .dev and routes in <span class="text-success">green</span> do work</p>
 <div class="list-group">
     {% for redirect_dict in data.redirects_list%}
     <a href="{{url_for(redirect_dict['function'])}}" class="list-group-item list-group-item-action {{redirect_dict['color']}}">
-        {{redirect_dict['description']}}
+        The Flask Route: {{redirect_dict['description']|replace('.','&period;')|safe}}
     </a>
     {% endfor %}
   
