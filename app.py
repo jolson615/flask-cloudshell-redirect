@@ -17,6 +17,9 @@ def index():
         {'function':'redirect_two', 
         'description':"redirect(f'''http://0.0.0.0:5000{url_for('index')}''')",
         'color':'bg-success'},
+        {'function':'redirect_three', 
+        'description':"redirect(f'''http://0.0.0.0{url_for('index')}''')",
+        'color':'bg-danger'},
     ]
     data['redirects_list']=redirects_list
     return render_template('index.html', data=data)
@@ -28,3 +31,7 @@ def redirect_one():
 @app.route('/redirect/two')
 def redirect_two():
     return redirect(f"http://0.0.0.0:5000{url_for('index')}")
+
+@app.route('/redirect/three')
+def redirect_three():
+    return redirect(f"http://0.0.0.0{url_for('index')}")

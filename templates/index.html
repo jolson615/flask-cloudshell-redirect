@@ -5,9 +5,9 @@
 
 <div class="list-group">
     {% for redirect_dict in data.redirects_list%}
-        <a href="{{url_for(redirect_dict['function'])}}" class="list-group-item list-group-item-action {{redirect_dict['color']}}">
-            {{redirect_dict['description']}}
-        </a>
+    <a href="{{url_for(redirect_dict['function'])}}" class="list-group-item list-group-item-action {{redirect_dict['color']}}">
+        {{redirect_dict['description']}}
+    </a>
     {% endfor %}
   
 </div>
