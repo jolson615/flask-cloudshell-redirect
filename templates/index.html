@@ -3,14 +3,12 @@
 
 {% block content %}
 <h1>Attempts at using redirect with a Cloudshell .dev preview </h1>
-<p>Routes in <span class="text-danger">red</span> do not work in .dev and routes in <span class="text-success">green</span> do work</p>
-<div class="list-group">
-    {% for redirect_dict in data.redirects_list%}
-    <a href="{{url_for(redirect_dict['function'])}}" class="list-group-item list-group-item-action {{redirect_dict['color']}}">
-        The Flask Route: {{redirect_dict['description']|replace('.','&period;')|safe}}
-    </a>
-    {% endfor %}
-  
-</div>
-
+<ol>
+    <li><a href="/redirect/one">Test 1</a> - Using route name</li>
+    <li><a href="/redirect/two">Test 2</a> - Using url_for (recommended by Flask docs)</li>
+    <li><a href="/redirect/three">Test 3</a> - String formatting for first half of route</li>
+    <li><a href="/redirect/four">Test 4</a> - String formatting for first half of route (w/ port)</li>
+</ol>
+<h3>Location Debugging Demo</h3>
+<p>Since Test 2 is the recommended method, we've added <a href="/location">/location</a>, which uses the same redirect as Test 2, but returns just the location header string instead of the 302 response itself.</p>
 {% endblock content%}
