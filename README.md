@@ -17,7 +17,7 @@ flask run
 
 ## Four Tests
 
-We tested four different versions of a redirect trying to trigger the regex in a .dev environment. Only the third one worked, which entailed hardcoding the host and port, so that method of course means the redirect works in the .dev test environment but fails in deployment. 
+We tested four different versions of a redirect trying to trigger the regex in a .dev environment. Only the fourth one worked, which entailed hardcoding the host and port, so that method of course means the redirect works in the .dev test environment but fails in deployment. 
 
 * Test 1 uses `redirect("/success")`
 * Test 2 uses `redirect(url_for("success"))`
